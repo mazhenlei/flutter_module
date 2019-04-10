@@ -1,0 +1,34 @@
+集成到原生项目---参考链接 https://github.com/lijunjieone/flutterLearn  集成flutter到原生项目
+
+
+第一种方案
+
+修改apply plugin: 'com.android.library' 注释掉application id 再次编译取得aar
+打包成aar  记住要把所有的aar都拿出来 依赖到安卓项目里
+https://www.jianshu.com/p/2f57c7bacbd8注意事项
+build.gradle 中的compileSdkVersion minSdkVersion targetSdkVersion 改成跟目标项目的版本号一样
+//注释掉
+ <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+ </intent-filter>
+application中的label去掉
+
+//在目标工程 app的build中添加
+ compileOptions {
+      sourceCompatibility 1.8
+      targetCompatibility 1.8
+ }
+
+用命令打包成aar  flutter build apk
+
+要把所有的aar都放进去  ------ 包含第三方插件生成的aar    方案比较麻烦，，，，，
+
+因为 Flutter工程导出成aar的时候，没有包含插件里面的原生代码。 所以我们可以找到所有插件的aar 复制到原生项目  这个aar基本是可以不用修改的只要不更新插件
+
+
+
+第二种方案 ：
+  直接在原生项目里创建flutter module
+
+ios 方案不一样

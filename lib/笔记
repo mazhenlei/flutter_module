@@ -1,0 +1,82 @@
+https://github.com/OpenFlutter/Flutter-Notebook 学习库
+
+
+安装apk 如果手机上有的话 flutter会自动卸载之前的
+
+Icons flutter提供的个icon资源类  可以自己设置颜色
+
+界面和数据逻辑尽量分开写  StatefulWidget实现各种组件 分开 数据单独用类写
+
+
+GlobalKey
+整个应用程序中唯一的密钥。
+
+_下划线代表私有  定义方法和变量
+
+
+await Future.delayed(Duration(seconds: 2));   等待两秒
+Future.delayed(Duration(seconds: 1)).then((_) {
+      //两秒后
+});
+
+const 是一个C语言（ANSI C）的关键字，具有着举足轻重的地位。 它限定一个变量不允许被改变，产生静态作用。
+
+PageView 就是viewpager   PageController控制器
+BottomNavigationBar 底部导航栏
+tabBar --- tabLayout  tabView tab对应的页面  TabController控制器 联动
+
+
+怎么存储？？？存储方式？
+
+使用sqflite: ^1.1.0插件 访问数据库  ----安卓中的SQLite
+
+
+通知栏？ 下载文件？ 图片处理？
+
+帧布局？
+
+Container Stack如何使用？
+
+// Material 是UI呈现的“一张纸”
+
+界面状态如何保存 比方说选择了照片显示之后 去其他界面回来还要重新加载  怎么解决
+
+https://zhuanlan.zhihu.com/p/45256552  如何保持底部导航栏页中子页面状态
+
+
+常见的插件库:
+
+https://www.imooc.com/article/39353?block_id=tuijian_wz  所有常见的库总结
+
+https://javiercbk.github.io/json_to_dart/ 一个在线json转dart实体类的工具
+
+https://www.cnblogs.com/yangyxd/articles/9232308.html
+
+////交互 https://flutterchina.club/tutorials/interactive/#stateful-stateless
+Stateful（有状态） 和 stateless（无状态） widgets
+stateless widget 没有内部状态. Icon、 IconButton, 和Text 都是无状态widget, 他们都是 StatelessWidget的子类。
+
+要创建一个自定义有状态widget，需创建两个类：StatefulWidget和State ,状态对象包含widget的状态和build() 方法。
+当widget的状态改变时，状态对象调用setState()，告诉框架重绘widget
+
+
+Offstage可以控制child是否显示  false为显示  true 为隐藏
+
+
+交互式widget  重点
+
+标准 widgets:
+Form
+FormField
+
+Material Components:
+Checkbox
+DropdownButton
+FlatButton
+FloatingActionButton
+IconButton
+Radio
+RaisedButton
+Slider
+Switch
+TextField

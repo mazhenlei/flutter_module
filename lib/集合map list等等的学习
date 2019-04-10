@@ -1,0 +1,15 @@
+
+ //创建泛型集合
+ List<T> list = List();
+ List<T> list1 = [];
+
+ List<String> _colors = <String>['', 'red', 'green', 'blue', 'orange'];
+
+ 集合添加数据
+ list
+       ..add()
+       ..add()
+       ..add()
+       ..add();  等价于for循环 list.add();
+
+ 取值 list[i]

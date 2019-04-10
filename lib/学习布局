@@ -1,0 +1,76 @@
+Flutter中有许多常用的控件，比如下面的：
+Text：文本控件，相当于安卓TextView;
+Row，Column：相当于安卓LinearLayout的两个方向;
+Stack：与Positioned控件配合，放到top, right, bottom, or left;
+Container：矩形控件，可与BoxDecoration配合来装饰 background, a border, or a shadow，可用margins, padding, and constraints来设置其尺寸。
+
+children: <Widget>[]相当LinearLayout（基于viewroup）
+child:是单个view
+
+给控件设置padding
+new Padding(
+            padding: const EdgeInsets.fromLTRB(0.0, 10.0, 0.0, 10.0), //左上右下
+            child : new 控件
+            ）
+padding: const EdgeInsets.all(8.0),
+const EdgeInsets.all(8.0)  ///定义一个距离  const--关键字--静态
+
+//学习布局 线性布局 权重设置等等 https://juejin.im/post/5b3edeb16fb9a04fe820ccbc
+mainAxisAlignment  ----- gravity
+mainAxisAlignment: MainAxisAlignment.center,
+mainAxisAlignment: MainAxisAlignment.start,
+mainAxisAlignment: MainAxisAlignment.end,
+
+Row/Column 内使用
+mainAxisSize: MainAxisSize.max, -----wrap
+mainAxisSize: MainAxisSize.min, -----match
+
+flex 属性等同于我们的 android:layout_weight
+ new Expanded(
+   flex : null
+ ）
+
+页面跳转 动态跳转--不带返回值
+ Navigator.of(context)
+          .push(new MaterialPageRoute(builder: (_) {
+          return new TextElement(title: "Text"); //构造传参 跳转
+ }));
+
+StatelessWidget 无状态控件（设置标题） StatefulWidget有状态可以更新（界面编写）
+
+常用点击事件 pressed:null
+給没点击事件的控件加点击
+new GestureDetector(child : 控件, onTap:(){}） 单击 双击 触摸等等
+
+关于text
+overflow: TextOverflow.ellipsis 超过加省略号
+softWrap: true, 自动换行
+
+关于editText--- TextField  属性较多比较全面
+
+自动缩放text字体 宽度等等
+flutterautotext:
+    git: https://github.com/LiuC520/flutterautotext.git
+
+
+print("输出log");
+
+
+实现底部导航栏
+bottomNavigationBar: BottomNavigationBar(//底部导航栏
+        items: [
+         BottomNavigationBarItem(
+                      icon: Icon(
+                        Icons.home,
+                        color: _bottomNavigationColor,
+                      ),
+                      title: Text(
+                        'HOME',
+                        style: TextStyle(color: _bottomNavigationColor),
+                      )),
+        ]
+        )
+
+ 实现引导页 viewpager---pageView
+
+ backgroundColor: Colors.brown, 设置背景颜色

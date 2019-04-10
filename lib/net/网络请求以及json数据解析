@@ -1,0 +1,19 @@
+flutter请求网络有两种，一种是http请求，一种是HttpClient请求
+
+
+另外第三方库 dio（网络请求框架）  json解析库
+
+
+//执行异步任务 Null可以是返回类型
+  Future<T> _onRefresh() async {
+
+   await Future.delayed(Duration(seconds: 3), () {
+      setState(() {
+        _loading = !_loading;
+     });
+
+    });
+  }
+
+
+https://javiercbk.github.io/json_to_dart/  一个在线json转dart实体类的工具
